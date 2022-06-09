@@ -8,7 +8,7 @@ I welcome y'all to my first webpage detailing something that i had done related 
 
 ### All Prepare for the JOY-RIDE-BELOW -HERE WE GO WHOOOOOOPS! 
 
-1. Feb 11 : An Email from prof Chockalingam citing the need for using smartphone's flashlight as a transmitter of Information. He shared a paer to start with (https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-/blob/main/VLC_References/vlc_smartpone.pdf) A study  done by a chinese university . From then, i started to research and work on the same. 
+1. Feb 11 : An Email from prof Chockalingam citing the need for using smartphone's flashlight as a transmitter of Information. [He shared a paper to start with] (https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-/blob/main/VLC_References/vlc_smartpone.pdf) A study  done by a chinese university . From then, i started to research and work on the same. 
 2. Came by Android studio as the best IDE for android app development as ease of loading the app into the smartphone. Started Developing the program and used the Camera Interface of the smartphone to access and control my flashlight.
 3. Started developing the code , and used sleep function of thread as the function that implements the pulse width of my flashlight signal (either-on or off). 
 4. Built a simple reciever circuit consisting of a photodiode and lm358 op-amp , and Arduino Uno acting as the intelligence.
