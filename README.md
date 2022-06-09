@@ -1,7 +1,10 @@
-# IISc- WORKFLOW
+# IISc-WORKFLOW-SMARTPHONE-VLC-MODULATION 
 
 ## JUST A WEBSITE DETAILING MY SMARTPHONE-FLASHLIGHT-VLC-MODULATION
 [REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-)
+
+
+I welcome y'all to my first webpage detailing something that i had done related to academics ! :D :D , I had compressed my workflow to include important details and milestones , this is something that you could not put out on a simple github readme.md file coz it's too long , but also too short to be a blog , so call this my attempt at a mini blog! :D 
 
 ### All Prepare for the JOY-RIDE-BELOW -HERE WE GO WHOOOOOOPS! 
 
