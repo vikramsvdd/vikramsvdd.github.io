@@ -1,5 +1,5 @@
 # IISc-WORKFLOW-SMARTPHONE-VLC-MODULATION 
-![PUSHPA DA ](https://github.com/vikramsvdd/vikramsvdd.github.io/blob/main/pushpa.jpg)
+(https://github.com/vikramsvdd/vikramsvdd.github.io/blob/main/pushpa.jpg)
 
 ## JUST A WEBSITE DETAILING MY SMARTPHONE-FLASHLIGHT-VLC-MODULATION
 [REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-)
