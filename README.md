@@ -43,7 +43,7 @@ L. Subsequently i rethinked  that any 2 consecutive bits should have should have
 
 M. As a next step , i came to know of **Source-Coding** as a way of compressing the data and maximizing the data rate. In particular, i implemented **Multi-Bit-Modulation** as a solution. (One difference from normal source coding and my-kinda source coding is that, normally 0s and 1s are the final layer of abstraction in all coding stratergies, but in my kind, special symbols are the final one , because my source is itself inconsistant!). Firstly, i implemented 2-bit-modulation where 00,01,10 and 11 are allocated respective symbols which are seperated consecutively by 17ms (the threshold gap for Redmi-Note-5-Pro). The symbols are allocated based on the probability of occurence of  bi-bits(a way that i use to call 2 bits). For a particular string found out that 01 and  10 are the first two most probable bi-bits, whereas 00 and 11 are the least probable bi-bits . **Thus the symbol with less duration gets allocated to the most probable bi-bits**. Thus i was able to increase my data rate ranging from **64 to 80 bps**. But in these, i specifically modified the reciever code for each string. But this is not a realistic solution simply because there are literally infinite names and modifying reciever code for each one is not a viable solution. Thus i ran a research for 500 random strings and found out a clear biasness in data for 3 types of modulation that i had carried out. Before Looking at the Freq Distribution ,look at the mapping that i have used 
 
-![here](/images/2-bit and 2-cum3 bit mapping.jpg)
+![here](/images/2,2cum3.jpg)
 
 ![here](/images/4-bit-mapping.jpg)
 
