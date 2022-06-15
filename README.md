@@ -1,5 +1,5 @@
 # IISc-WORKFLOW-SMARTPHONE-VLC-MODULATION 
-![image](/images/unnamed.png)
+![image](/images/flashlightapple.jpg)
 
 ## JUST A WEBSITE DETAILING MY SMARTPHONE-FLASHLIGHT-VLC-MODULATION
 [REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-) 
