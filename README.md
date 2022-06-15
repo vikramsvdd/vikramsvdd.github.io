@@ -45,7 +45,7 @@ M. As a next step , i came to know of **Source-Coding** as a way of compressing 
 
 2 bit modulation!
 
-[freqdistribution-2-bit](/images/2bitmodulationfreqdistri.PNG) 
+![freqdistribution-2-bit](/images/2bitmodulationfreqdistri.PNG) 
 
 
 2cum3bit modulation
