@@ -10,35 +10,38 @@ I welcome y'all to my first webpage detailing something that i had done related 
 ### All Prepare for the JOY-RIDE-BELOW -HERE WE GO WHOOOOOOPS! 
 
 1. Feb 11 : An Email from prof Chockalingam citing the need for using smartphone's flashlight as a transmitter of Information. [He shared a paper to start with](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-/blob/main/VLC_References/vlc_smartpone.pdf) A study  done by a chinese university . From then, i started to research and work on the same. 
-2. 
-3. Came by Android studio as the best IDE for android app development as ease of loading the app into the smartphone. Started Developing the program and used the Camera Interface of the smartphone to access and control my flashlight.
-4. 
-5. Started developing the code , and used sleep function of thread as the function that implements the pulse width of my flashlight signal (either-on or off). 
-6. 
-7. Built a simple reciever circuit consisting of a photodiode and lm358 op-amp , and Arduino Uno acting as the intelligence.
-8. 
-9. Flashed a simple clock signal consisting of 0s and 1s alternating for 100 times (hereby called the clock signal from now on) onto the reciver circuit, probed an oscilloscope to view the output. (Look at clock_inconsitency.docx document to view the problem in detail , i have attached the  link  below) 
-10. 
-11. A major problem became existent, the pulse width is deviating from the programmed pulse width rapidly . I programmed a 1 ms pulse width and the output pulse width varied from **5 ms to 15 ms**. Thus a deviation of 500 to 1700% from my programmed width is noted. A statistical test has been conducted to find the mean and variance of the pulse widths, the result is indicated in detail by 
-12. 
-13. ![clock_signal_with_1ms_prog_delay](/images/plain_clock_signal_2.PNG)
+ 
+2. Came by Android studio as the best IDE for android app development as ease of loading the app into the smartphone. Started Developing the program and used the Camera Interface of the smartphone to access and control my flashlight.
+
+3. Started developing the code , and used sleep function of thread as the function that implements the pulse width of my flashlight signal (either-on or off). 
+ 
+4. Built a simple reciever circuit consisting of a photodiode and lm358 op-amp , and Arduino Uno acting as the intelligence.
+ 
+5. Flashed a simple clock signal consisting of 0s and 1s alternating for 100 times (hereby called the clock signal from now on) onto the reciver circuit, probed an oscilloscope to view the output. (Look at clock_inconsitency.docx document to view the problem in detail , i have attached the  link  below) 
+ 
+6. A major problem became existent, the pulse width is deviating from the programmed pulse width rapidly . I programmed a 1 ms pulse width and the output pulse width varied from **5 ms to 15 ms**. Thus a deviation of 500 to 1700% from my programmed width is noted. A statistical test has been conducted to find the mean and variance of the pulse widths, the result is indicated in detail by 
+
+ ![clock_signal_with_1ms_prog_delay](/images/plain_clock_signal_2.PNG)
 
 7. As an alternative way of programming the pulse width, i used java's Executor Object to achieve my objective. It has a comparatively better performance in terms of less divergence of pulse width, the result is indicated in detail by 
-8. 
-9. ![clock_signal_with_1ms_prog_delay_using_java_executor](/images/plain_clocksignal(with%201%20ms%20delay).PNG). 
-10. 
-11. But it is still not a solution , just an alternate way in which we faced the same problem . 
+ 
+ ![clock_signal_with_1ms_prog_delay_using_java_executor](/images/plain_clocksignal(with%201%20ms%20delay).PNG). 
+ 
+ But it is still not a solution , just an alternate way in which we faced the same problem . 
 
 8. The chinese paper also detailed the same problem, but their solution was not clearly stated in the paper, and we were left in a state of perusal on how to resolove the problem by ourselves.
-9. 
-10. [Landed on a new study](https://hal.inria.fr/hal-01683629/document) . They also detailed the same problem, and also had added that the pulse width variation varied for different smarphones as the problem is hugely OS dependent (OS introduces the delay as it is a GPOS and multithreaded). But they had proposed a solution to this problem. Encoding 1 and 0 in terms of pulse width was their attempt. I wrote a report that details how i collected the gist from several sources the HAL paper was one of them and had arrived at a solution [CLOCK_INCONSISTENCY.DOCX](/images/clock-inconsistency.docx)
-11. 
- 10. So i was able to arrive at a solution and was able to flash my information ( eg:chockalingam in string (utf-8 encoding)). But there was a huge take , the data rate was too low, it was around **17 bits/second ( hereforth called bps)** , which is too low by any standard and a motivation to increase the data rate was existent. Also i subsequently measured other metrics like BER and Eb/No (Noise is modelled with Shot noise as the only one, thermal noise is ignored). Thus it has a **BER 0.054 of  and Eb/No of 40,469(no unit).**(all metrics calculated by performing ST(see [1]))
- 11. 
- 12. In parallel, i also developed a fingerprint authentication feat to my modulation app to add additional security. The feat was achieved with the help of FingerprintManager module in android studio. 
- 13. 
- 14. Subsequently i rethinked  that any 2 consecutive bits should have should have their equivalent symbol high time to be seperated by 17ms and made 0's symbol without any delay , whereas 1 symbol's high time is programmed to be 17ms long . Even though the clock pulses varied even in this case , i was able to transmit and recieve the data properly and was able to increase my **datarate to 54 bps , BER of 0.0125 and Eb/No of 48,787(ST).** 
-// needs research //13. As a next step , i came to know of **Source-Coding** as a way of compressing the data and maximizing the data rate. In particular, i implemented **Multi-Bit-Modulation** as a solution. (One difference from normal source coding and my-kinda source coding is that, normally 0s and 1s are the final layer of abstraction in all coding stratergies, but in my kind, special symbols are the final one , because my source is itself inconsistant!). Firstly, i implemented 2-bit-modulation where 00,01,10 and 11 are allocated respective symbols which are seperated consecutively by 17ms (the threshold gap for Redmi-Note-5-Pro). The symbols are allocated based on the probability of occurence of  bi-bits(a way that i use to call 2 bits). For a particular string found out that 01 and  10 are the first two most probable bi-bits, whereas 00 and 11 are the least probable bi-bits . **Thus the symbol with less duration gets allocated to the most probable bi-bits**. Thus i was able to increase my data rate ranging from **64 to 80 bps**. But in these, i specifically modified the reciever code for each string. But this is not a realistic solution simply because there are literally infinite names and modifying reciever code for each one is not a viable solution. Thus i ran a research for 500 random strings and found out a clear biasness in data for 3 types of modulation that i had carried out 
+ 
+9. [Landed on a new study](https://hal.inria.fr/hal-01683629/document) . They also detailed the same problem, and also had added that the pulse width variation varied for different smarphones as the problem is hugely OS dependent (OS introduces the delay as it is a GPOS and multithreaded). But they had proposed a solution to this problem. Encoding 1 and 0 in terms of pulse width was their attempt. I wrote a report that details how i collected the gist from several sources the HAL paper was one of them and had arrived at a solution [CLOCK_INCONSISTENCY.DOCX](/images/clock-inconsistency.docx)
+
+
+10. So i was able to arrive at a solution and was able to flash my information ( eg:chockalingam in string (utf-8 encoding)). But there was a huge take , the data rate was too low, it was around **17 bits/second ( hereforth called bps)** , which is too low by any standard and a motivation to increase the data rate was existent. Also i subsequently measured other metrics like BER and Eb/No (Noise is modelled with Shot noise as the only one, thermal noise is ignored). Thus it has a **BER 0.054 of  and Eb/No of 40,469(no unit).**(all metrics calculated by performing ST(see [1]))
+ 
+11. In parallel, i also developed a fingerprint authentication feat to my modulation app to add additional security. The feat was achieved with the help of FingerprintManager module in android studio. 
+ 
+12. Subsequently i rethinked  that any 2 consecutive bits should have should have their equivalent symbol high time to be seperated by 17ms and made 0's symbol without any delay , whereas 1 symbol's high time is programmed to be 17ms long . Even though the clock pulses varied even in this case , i was able to transmit and recieve the data properly and was able to increase my **datarate to 54 bps , BER of 0.0125 and Eb/No of 48,787(ST).** 
+// needs research //
+
+13. As a next step , i came to know of **Source-Coding** as a way of compressing the data and maximizing the data rate. In particular, i implemented **Multi-Bit-Modulation** as a solution. (One difference from normal source coding and my-kinda source coding is that, normally 0s and 1s are the final layer of abstraction in all coding stratergies, but in my kind, special symbols are the final one , because my source is itself inconsistant!). Firstly, i implemented 2-bit-modulation where 00,01,10 and 11 are allocated respective symbols which are seperated consecutively by 17ms (the threshold gap for Redmi-Note-5-Pro). The symbols are allocated based on the probability of occurence of  bi-bits(a way that i use to call 2 bits). For a particular string found out that 01 and  10 are the first two most probable bi-bits, whereas 00 and 11 are the least probable bi-bits . **Thus the symbol with less duration gets allocated to the most probable bi-bits**. Thus i was able to increase my data rate ranging from **64 to 80 bps**. But in these, i specifically modified the reciever code for each string. But this is not a realistic solution simply because there are literally infinite names and modifying reciever code for each one is not a viable solution. Thus i ran a research for 500 random strings and found out a clear biasness in data for 3 types of modulation that i had carried out.
 
 2 bit modulation!
 
@@ -56,59 +59,57 @@ and 4 bit modulation
 I alloted symbols to each multi-bits and from (2 ms,18ms and on....upto number of levels).So one thing we can notice in the multi-bit-modulations are a **tradeoff** between number of pulsewidth levels with quantity of data, for eg, for 4 bit modulation there are 16 levels and the pulse width varies from (2 ms(1ms for on, one for off) to 256 ms!) but the number of data compresses to 96/4, for a 96 bit string. As per the freq distribution results i carried out the symbol allotment for different multi-bits and calculated the **Theoretical data rate for 2 bit,2-cum-3 bit and 4 -bit are 95.6, 53.7 and 48.07 bps respectively**. ,**practical datarate might differ even starkly from this but this theoretical comparision ensures that even though the number of bits reduces for multi-bit modulation , the number of levels increase and the pulse width increases in steps of 17ms, essentially bringing down the bit rate , thus w bit theoretically has a good performance compared to 2 cum 3 and 4 , and 1 has a even good performance (100 bps for the "lot") theoretically**. (further research to be done on allocating symbols to each and every string individually as well as various other source coding methods).  **Practically i used ST and got 64, 55.2 , 43 bps are their datarates and their BERs are 0.003,0.004 and 0.0074 in the mentioned order . Their Eb/No 's are 54,839 ,58,883 and 62,333. One thing is that even ST confirms the theoretical test that I had done above that multi-bit-modulations have lower datarate as you go on their line (in increasing no of bits per symbol fashion) ** 
 
  Find attached the stats that I used to calculate the metrics(ST) , for
- ####mod-using-android-studio-(17,43 ms prog delay for 0 and 1's high time)
+ **####mod-using-android-studio-(17,43 ms prog delay for 0 and 1's high time)**
  
  ![17,43-mod](/images/method_1_(17%2C43)_statistics.png)
  
- ####mod-using-android-studio-(no-programmed-delay,17 ms prog delay for 0 and 1's high time)
+ **####mod-using-android-studio-(no-programmed-delay,17 ms prog delay for 0 and 1's high time)**
  
  ![zero,17-mod](/images/method_2(no%2C17)_statistics.png)
  
- ####2-bit-mod  
+ **####2-bit-mod** 
  
  ![2-bit](/images/2-bit-mod-statistics.png)
  
- ####3-bit-mod
+**####2-cum-3-bit-mod**
  
  ![2-cum-3-bit](/images/2aur3bitmod_statistics.png)
  
- ####4-bit-mod
+ **####4-bit-mod**
  
  ![4-bit](/images/4bitmod_statistics.png)
 
-13. Finally i settled on the single bit modulation through android studio as the best hope until i came across several forums and answers from the queries that i posted which addressed "Rooting" the Phone and controlling LED driver through Shell maybe a better option. But Rooting is a dangerous process and a very unreliable one , which can brick your phone and erase all your data if not done correctly. I tried contacting several professionals in SP road, Bangalore for rooting my phone(the Electronics hub of Bangalore, possibly India) yet they refused citing it as potentially  dangerous.  
+14. Finally i settled on the single bit modulation through android studio as the best hope until i came across several forums and answers from the queries that i posted which addressed "Rooting" the Phone and controlling LED driver through Shell maybe a better option. But Rooting is a dangerous process and a very unreliable one , which can brick your phone and erase all your data if not done correctly. I tried contacting several professionals in SP road, Bangalore for rooting my phone(the Electronics hub of Bangalore, possibly India) yet they refused citing it as potentially  dangerous.  
 
-So i had to arrange for alternate mobile phones such as Lenovo K6 Power and Letv X509. I tried to root Lenovo and accidently bricked it as expected and rendering it useless. I succeeded in rooting the Letv but was unable to locate the exact flashlight driver and was unable to write any due to a denied permission set by SELinux. Came across Redmi and OnePlus phones being very developer friendly and thus i changed my personal phone to Redmi note 8 pro and  
+So i had to arrange for alternate mobile phones such as Lenovo K6 Power and Letv X509. I tried to root Lenovo and accidently bricked it as expected and rendering it useless. I succeeded in rooting the Letv but was unable to locate the exact flashlight driver and was unable to write any due to a denied permission set by SELinux. Came across Redmi and OnePlus phones being very developer friendly and thus i changed my personal phone to Redmi note 8 pro and used redmi note 5 pro as the goat for rooting, and eventually succeeded and was able to locate the flashlight driver.  
 
-used redmi note 5 pro as the goat for rooting, and eventually succeeded and was able to locate the flashlight driver.  
+15. Now to switch on and switch off i have to go to a file within the flashlight driver called brightness (an ascii file), i have to change the value of the file to switch the flashlight on at different intensity. Its values ranges from 0 (flashlight off) to 256 (the max permissible brightness, a limit set by the manufacturer , beyond which the flashlight will melt!) ,  This gives a possibility of amplitude modulation, but that’s an entirely different and there should be a dedicated effort towards it and my priority is different, I was able to switch on and off the flashlight by altering the file between two values 0 and 100.  
 
-14. Now to switch on and switch off i have to go to a file within the flashlight driver called brightness (an ascii file), i have to change the value of the file to switch the flashlight on at different intensity. Its values ranges from 0 (flashlight off) to 256 (the max permissible brightness, a limit set by the manufacturer , beyond which the flashlight will melt!) ,  This gives a possibility of amplitude modulation, but that’s an entirely different and there should be a dedicated effort towards it and my priority is different, I was able to switch on and off the flashlight by altering the file between two values 0 and 100.  
+16. Now , I needed to write a shell script to automate this, but unfortunately even though android is a linux kernel based system, its OS is different from typical Linux Distro, thus I came across the “Swiss Army Knife of Embedded Developers” in other words known as Busybox, which is a binary call which contains all unix functionalities packaged as a single unit. So I was able to use basic unix commands to interact with the android OS and I also downloaded Termux, which is a command line interface directed to android developers.  
 
-15. Now , I needed to write a shell script to automate this, but unfortunately even though android is a linux kernel based system, its OS is different from typical Linux Distro, thus I came across the “Swiss Army Knife of Embedded Developers” in other words known as Busybox, which is a binary call which contains all unix functionalities packaged as a single unit. So I was able to use basic unix commands to interact with the android OS and I also downloaded Termux, which is a command line interface directed to android developers.  
+17. Now with these tools I was able to write a shell script ( I was not able to use bash, since busybox just contains the essential utilities , was also not able to install due to the problem of SELinux, fortunately I was able to achieve my objective with the help of shell script  in its own) , to  periodically switch on and off the flashlight and with a delay (sleep function), and it maxed out at 400 Hz or 400 bps(average), which is much higher than my previous best 40 hz (for single bit mod through app). But without a delay I witnessed a magic, the frequency was a whopping 4000 Hz !!!!(average). Even though this method also has the same clock inconsistency problem, the average data rate here is very high because, essentially because when we consider the app developed through the android studio, it has to go through Camera Api and that camera API then finally controls the brightness file , whereas through shell, I was directly able to control the brightness file bypassing the camera API and saving me that delay.  
 
-16. Now with these tools I was able to write a shell script ( I was not able to use bash, since busybox just contains the essential utilities , was also not able to install due to the problem of SELinux, fortunately I was able to achieve my objective with the help of shell script  in its own) , to  periodically switch on and off the flashlight and with a delay (sleep function), and it maxed out at 400 Hz or 400 bps(average), which is much higher than my previous best 40 hz (for single bit mod through app). But without a delay I witnessed a magic, the frequency was a whopping 4000 Hz !!!!(average). Even though this method also has the same clock inconsistency problem, the average data rate here is very high because, essentially because when we consider the app developed through the android studio, it has to go through Camera Api and that camera API then finally controls the brightness file , whereas through shell, I was directly able to control the brightness file bypassing the camera API and saving me that delay.  
+18. But subsequently my simple receiver ( bpw40- photodiode with arduino) was not able to  receive the signal properly and it missed the pulses , primarily because both the photodiode and the reciever was slow( I used simple analogRead() rather than interrupts). As a solution I used a photodiode array designed and developed in IISc by my professor and a lm358 op-amp. Modified the receiver code  completely using interrupts and was able to receive the signal correctly. This is the clock signal that i had obtained from my smartphone when programmed through shell with no delay
 
-17. But subsequently my simple receiver ( bpw40- photodiode with arduino) was not able to  receive the signal properly and it missed the pulses , primarily because both the photodiode and the reciever was slow( I used simple analogRead() rather than interrupts). As a solution I used a photodiode array designed and developed in IISc by my professor and a lm358 op-amp. Modified the receiver code  completely using interrupts and was able to receive the signal correctly. This is the clock signal that i had obtained from my smartphone when programmed through shell with no delay
-18. 
-19. ![programmed through shell with no delay](/images/no_delay_shell_clock_pulse1.jpg)
-20. 
-21. , want a zoomed version? here you go 
-22. 
-23. ![zoomed](/images/no_delay_shell_clock_pulse_2.jpg)
-24. 
-25.   Here is the stats 
-26.   
-27.   ![here](/images/vpwm_no_prog_delay_stat.png)
-28.   
-29.   , we can see a 4000hz mean stuff here.  Smartphone had  a display failure and had to modify it but I optimized the total expenditure :D. Finally I tried transmitting data through shell (a 0 has a on and off with no delay , a 1 has a on with a sleep of 10 ms and off with 0 delay , but the average pulse width for high time  was 19 ms 
-30.   
-31.   ![data_transmission_using_sleep as delay source](/images/shell_mod_statistics.png), even lower than 15 ms of android studio's latest mod that i have attached 
-32.   
-33.   ![reference](/images/method_2(no%2C17)_statistics.png) 
-34.   
-35.   which is done using android studio and has the camera api, despite that it outweighed this method , thus landing us to the statement that a sleep of 10 ms performs worse in shell compared to a sleep of 17ms in android studio and having a rate of 52 bps and BER as 0.0052 and  Eb/No as 52,487 (ST) . But a delay of 5 ms in shell, ensures an average high  pulse width of 10 ms, even though there is a 0.12% probability in average  that your bit gets flipped for 1000 bits , but the  datarate is nearly 100bps , BER and Eb/No is 0.0071 (ST) . 
+ ![programmed through shell with no delay](/images/no_delay_shell_clock_pulse1.jpg)
 
-18.Thus Sleep is not very efficient in introducing delays at real time in shell, so I tried alternatives that can give me a precise delay   
+ , want a zoomed version? here you go 
+
+ ![zoomed](/images/no_delay_shell_clock_pulse_2.jpg)
+ 
+  Here is the stats 
+   
+   ![here](/images/vpwm_no_prog_delay_stat.png)
+  
+ , we can see a 4000hz mean stuff here.  Smartphone had  a display failure and had to modify it but I optimized the total expenditure :D. Finally I tried transmitting data through shell (a 0 has a on and off with no delay , a 1 has a on with a sleep of 10 ms and off with 0 delay , but the average pulse width for high time  was 19 ms 
+  
+  ![data_transmission_using_sleep as delay source](/images/shell_mod_statistics.png), even lower than 15 ms of android studio's latest mod that i have attached 
+   
+   ![reference](/images/method_2(no%2C17)_statistics.png) 
+ 
+  which is done using android studio and has the camera api, despite that it outweighed this method , thus landing us to the statement that a sleep of 10 ms performs worse in shell compared to a sleep of 17ms in android studio and having a rate of 52 bps and BER as 0.0052 and  Eb/No as 52,487 (ST) . But a delay of 5 ms in shell, ensures an average high  pulse width of 10 ms, even though there is a 0.12% probability in average  that your bit gets flipped for 1000 bits , but the  datarate is nearly 100bps , BER and Eb/No is 0.0071 (ST) . 
+
+19.Thus Sleep is not very efficient in introducing delays at real time in shell, so I tried alternatives that can give me a precise delay   
 
 a. writing a cpp program and used chrono to introduce a delay and calling the cpp program from shell script, turned out to be slower than directly doing the same in shell. Also, using system() command in the cpp program , basically running shell script within cpp also similarly turned out to be slower. 
 
@@ -120,7 +121,7 @@ c. Tried to introduce a delay using a for loop looping 100 times, and had a near
 
 Ultimately, I came to know after reading several forums and querying several professionals who commented that a smartphone is a GPOS based device(General Purpose OS) whose design structure is very different from a RTOS(GPOS is like a internet system, it allocates resources to every activity without any discrimination rather than  a RTOS which works on priority), thus one cannot expect guarantees out of a GPOS unlike a RTOS . 
 
- 19.  Now , run out of all methods, I perused for a while , if I reduce the pulse width difference that distinguishes between a 1 and 0 , there is a probability of 0 appearing as 1 and the probability of the inversion of bits increases , as I decrease the pulse width. Now then how can i differentiate a 0 from a 1 then seriously  without increasing pulse width difference between them as well as not compromising on data rate , now obviously the possibility seems like  I can only achieve one out of the two because this is no-brainer , because both of these things are contradictory! Well after deep thoughts,they are just **seemingly contradictory** , as there is a way! Surprising yet true! The difference is that when you stop thinking pulse width difference is the **only Saviour! , and think of it as one of the saviors!**  , wanna know the other one, that’s voltage! Now you get caught when you only differentiate 1 and 0 based on pulse width, why don't you also differentiate them based on voltage so that even if pulse width fails, voltage hails! :smiley: sorry for the punch! Now say , I add a 5 ms delay to 1 ’s symbol. Now the thing is the probability that 0 can pose as 1 is increased! But , I will add 0’s high time to be a lower intensity pulse and 1’s high time to be a higher intensity pulse. All the results and code related to this are attached in the results tab for your reference. I power the receiver circuit with 19 v source . The reason is for lower voltage powering , the flashlight intensity differences produces no voltage difference.  Now 0’s high time has a 7.5 v value and 1’s high time has a 18 v value , Now my receiver checks if i receive a pulse it should satisfy 2 conditions to be a 1: 
+20.  Now , run out of all methods, I perused for a while , if I reduce the pulse width difference that distinguishes between a 1 and 0 , there is a probability of 0 appearing as 1 and the probability of the inversion of bits increases , as I decrease the pulse width. Now then how can i differentiate a 0 from a 1 then seriously  without increasing pulse width difference between them as well as not compromising on data rate , now obviously the possibility seems like  I can only achieve one out of the two because this is no-brainer , because both of these things are contradictory! Well after deep thoughts,they are just **seemingly contradictory** , as there is a way! Surprising yet true! The difference is that when you stop thinking pulse width difference is the **only Saviour! , and think of it as one of the saviors!**  , wanna know the other one, that’s voltage! Now you get caught when you only differentiate 1 and 0 based on pulse width, why don't you also differentiate them based on voltage so that even if pulse width fails, voltage hails! :smiley: sorry for the punch! Now say , I add a 5 ms delay to 1 ’s symbol. Now the thing is the probability that 0 can pose as 1 is increased! But , I will add 0’s high time to be a lower intensity pulse and 1’s high time to be a higher intensity pulse. All the results and code related to this are attached in the results tab for your reference. I power the receiver circuit with 19 v source . The reason is for lower voltage powering , the flashlight intensity differences produces no voltage difference.  Now 0’s high time has a 7.5 v value and 1’s high time has a 18 v value , Now my receiver checks if i receive a pulse it should satisfy 2 conditions to be a 1: 
 
   -It should have a delay >=5 ms 
   -It should have a voltage greater > 10V.(the threshold is limited to the programmer , this is just a sample) . 
