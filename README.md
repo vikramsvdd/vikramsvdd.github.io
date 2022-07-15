@@ -5,7 +5,7 @@
 [REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-) 
 
 
-I welcome y'all to my first webpage detailing something that i had done related to academics ! :D :D , I had compressed my workflow to include important details and milestones , this is something that you could not put out on a simple github readme.md file coz it's too long , but also too short to be a book :D , so call this my attempt at a  blog! :D . For in-detail reference to codes and other results , visit repo_link above.
+I welcome y'all to my first webpage detailing something that i had done related to academics ! :D :D , I had compressed my workflow to include important details and milestones , this is something that you could not put out on a simple github readme.md file because  it's too long , but also too short to be a book :D , so call this my attempt at a  blog! :D . For in-detail reference to codes and other results , visit repo_link above.
 
 ### All Prepare for the JOY-RIDE-BELOW -HERE WE GO WHOOOOOOPS! 
 
@@ -169,6 +169,8 @@ and now iam able to flash at a mean 1.7k bps ,see the stats for yourself
 ![here](/images/vpwm_700us_delay_using_for_loop_stats.png) 
 
 Not  that bad compared to 2khz! But I cannot pump  to 2khz but can near 2khz by introducing appropriate delay(not for pulse width modulation! Remember we dropped encoding data with pulse width for the prospect of a better one! I just introduced the delay to give it some time to switch on to higher intensity flash). Now we can notice on the picture that I have attached, that for 0 it resembles a perfect square pulse, but for 1 it resembles a staircase (see everythin for urself at the forums link below) reason: same as above, innate to my smartphone, it flashes to a lesser intensity like 0’s high time level intensity and then goes on to flash at programmed higher intensity. I first made this mistake(post #60 , [arduino forums](https://forum.arduino.cc/t/is-there-any-arduino-module-that-can-do-my-job-when-interfaced-with-uno/998127/59)) , (**make it happen**) fortunately I was able to achieve sampling voltage before falling edge and  spit out the 0s and 1s. My BER is 0.00034 and Eb/No for 1  is 77459 and for 0 is 12,913 thus giving out an average of 45,196 (ST). (Note: all metrics have been calculated for 500 random strings as the message). Now this  is a blockbuster achievement for smartphone based transmitters! This is the fastest I can transmit data in my smartphone! (I can go upto but not 2 khz, due to above mentioned reason)  . **Yikes! Target 👉👍👌 done and dusted, at least for now!** 
+
+U. Got Feedback from several forum friends who advocated the use of NEC protocol and use of differential modulation. See the link below to find why i find them not suitable (https://forum.arduino.cc/t/is-there-any-arduino-module-that-can-do-my-job-when-interfaced-with-uno/998127/39) for NEC and (https://indianinstituteofscience-my.sharepoint.com/:w:/r/personal/vikramv_iisc_ac_in/_layouts/15/Doc.aspx?sourcedoc=%7BBD2ECAA4-7F0E-4515-A4E5-B29CA63A3D8E%7D&file=Document1.docx&wdOrigin=OFFICECOM-WEB.START.REC&ct=1657861348692&action=default&mobileredirect=true) for differential modulation. 
 
 
 
