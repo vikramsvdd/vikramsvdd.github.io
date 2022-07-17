@@ -5,11 +5,11 @@
 [REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-) 
 
 
-I welcome y'all to my first webpage detailing something that i had done related to academics ! :D :D , I had compressed my workflow to include important details and milestones , this is something that you could not put out on a simple github readme.md file because  it's too long , but also too short to be a book :D , so call this my attempt at a  blog! :D . For in-detail reference to codes and other results , visit repo_link above.
+I welcome y'all to my first webpage detailing something that i had done related to academics ! :D :D , I had compressed my workflow to include important details and milestones , this is something that you could not put out on a simple github readme.md file because  it's too long , but also too short to be a book :D , so call this my attempt at a  blog! :D . For in-detail reference to codes and other results , visit repo_link above. All Credits go to Professor Chockalingam of IISc Bangalore, who gave me support and the platform to enable me to contribute to this project. 
 
 ### All Prepare for the JOY-RIDE-BELOW -HERE WE GO WHOOOOOOPS! 
 
-A. Feb 11 : An Email from prof Chockalingam citing the need for using smartphone's flashlight as a transmitter of Information. [He shared a paper to start with](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-/blob/main/VLC_References/vlc_smartpone.pdf) A study  done by a chinese university . From then, i started to research and work on the same. 
+A. Feb 11 : An Email from Prof Chockalingam citing the need for using smartphone's flashlight as a transmitter of Information. [He shared a paper to start with](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-/blob/main/VLC_References/vlc_smartpone.pdf) A study  done by a chinese university . From then, i started to research and work on the same. 
  
 B. Came by Android studio as the best IDE for android app development as ease of loading the app into the smartphone. Started Developing the program and used the Camera Interface of the smartphone to access and control my flashlight.
 
@@ -34,7 +34,7 @@ H. The chinese paper also detailed the same problem, but their solution was not 
 I. [Landed on a new study](https://hal.inria.fr/hal-01683629/document) . They also detailed the same problem, and also had added that the pulse width variation varied for different smarphones as the problem is hugely OS dependent (OS introduces the delay as it is a GPOS and multithreaded). But they had proposed a solution to this problem. Encoding 1 and 0 in terms of pulse width was their attempt. I wrote a report that details how i collected the gist from several sources the HAL paper was one of them and had arrived at a solution [CLOCK_INCONSISTENCY.DOCX](/images/clock-inconsistency.docx)
 
 
-J. So i was able to arrive at a solution and was able to flash my information ( eg:chockalingam in string (utf-8 encoding)). But there was a huge take , the data rate was too low, it was around **17 bits/second ( hereforth called bps)** , which is too low by any standard and a motivation to increase the data rate was existent. Also i subsequently measured other metrics like BER and Eb/No (Noise is modelled with Shot noise as the only one, thermal noise is ignored). Thus it has a **BER 0.054 of  and Eb/No of 40,469(no unit).**(all metrics calculated by performing ST(see [1]))
+J. So i was able to arrive at a solution and was able to flash my information ( eg:"chockalingam" in string (utf-8 encoding)). But there was a huge take , the data rate was too low, it was around **17 bits/second ( hereforth called bps)** , which is too low by any standard and a motivation to increase the data rate was existent. Also i subsequently measured other metrics like BER and Eb/No (Noise is modelled with Shot noise as the only one, thermal noise is ignored). Thus it has a **BER 0.054 of  and Eb/No of 40,469(no unit).**(all metrics calculated by performing ST(see [1]))
  
 K. In parallel, i also developed a fingerprint authentication feat to my modulation app to add additional security. The feat was achieved with the help of FingerprintManager module in android studio. 
  
@@ -83,7 +83,7 @@ I alloted symbols to each multi-bits and from (2 ms,18ms and on....upto number o
  
  ![4-bit](/images/4bitmod_statistics.png)
 
-N. Finally i settled on the single bit modulation through android studio as the best hope until i came across several forums and answers from the queries that i posted which addressed "Rooting" the Phone and controlling LED driver through Shell maybe a better option. But Rooting is a dangerous process and a very unreliable one , which can brick your phone and erase all your data if not done correctly. I tried contacting several professionals in SP road, Bangalore for rooting my phone(the Electronics hub of Bangalore, possibly India) yet they refused citing it as potentially  dangerous.  
+N. Finally i settled on the single bit modulation through android studio as the best hope until i came across several forums and answers from the queries that i posted which addressed "Rooting" the Phone and controlling LED driver through Shell maybe a better option. But Rooting is a dangerous process and a very unreliable one , which can brick your phone and erase all your data if not done correctly. I tried contacting several professionals in SP road, Bangalore for rooting my phone(the Electronics hub of Bangalore, possibly India) yet they refused citing it as potentially dangerous.  
 
 So i had to arrange for alternate mobile phones such as Lenovo K6 Power and Letv X509. I tried to root Lenovo and accidently bricked it as expected and rendering it useless. I succeeded in rooting the Letv but was unable to locate the exact flashlight driver and was unable to write any due to a denied permission set by SELinux. Came across Redmi and OnePlus phones being very developer friendly and thus i changed my personal phone to Redmi note 8 pro and used redmi note 5 pro as the goat for rooting, and eventually succeeded and was able to locate the flashlight driver.  
 
