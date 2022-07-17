@@ -5,7 +5,7 @@
 [REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-) .
 
 
-I welcome y'all to my first webpage detailing something that i had done related to academics ! :D :D , I had compressed my workflow to include important details and milestones , this is something that you could not put out on a simple github readme.md file because  it's too long , but also too short to be a book :D , so call this my attempt at a  blog! :D . For in-detail reference to codes and other results , visit repo_link above. All Credits go to Professor Chockalingam of IISc Bangalore, who gave me support and the platform to enable me to contribute to this project. 
+I welcome y'all to my first webpage detailing something that i had done related to academics ! :D :D , I had compressed my workflow to include important details and milestones , this is something that you could not put out on a simple github readme.md file because  it's too long , but also too short to be a book :D , so call this my attempt at a  blog! :D . For in-detail reference to codes and other results , visit repo_link above. All Credits go to Professor Chockalingam of IISc Bangalore, who gave me support, ideas and the platform to enable me to contribute to this project. 
 
 ### All Prepare for the JOY-RIDE-BELOW -HERE WE GO WHOOOOOOPS! 
 
