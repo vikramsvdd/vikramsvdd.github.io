@@ -1,7 +1,7 @@
 # IISc-WORKFLOW-SMARTPHONE-VLC_Transmitter 
 ![image](/images/flashlightapple.jpg)
 
-## JUST A WEBSITE DETAILING MY Project
+## JUST A WEBSITE DETAILING MY Research-Project in IISc.
 [REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-) . [!! CONFIDENTIAL please reach out to me at vv50517@gmail.com for any queries regarding this]
 
 
