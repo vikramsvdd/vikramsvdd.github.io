@@ -1,13 +1,13 @@
-# IISc-WORKFLOW-SMARTPHONE-VLC-MODULATION 
+# IISc-WORKFLOW-SMARTPHONE-VLC_Transmitter 
 ![image](/images/flashlightapple.jpg)
 
-## JUST A WEBSITE DETAILING MY SMARTPHONE-FLASHLIGHT-VLC-MODULATION
-[REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-) .
+## JUST A WEBSITE DETAILING MY Project
+[REPO_LINK!](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-) . [!! CONFIDENTIAL please reach out to me at vv50517@gmail.com for any queries regarding this]
 
 
-I welcome y'all to my first webpage detailing something that i had done related to academics ! :D :D , I had compressed my workflow to include important details and milestones , this is something that you could not put out on a simple github readme.md file because  it's too long , but also too short to be a book :D , so call this my attempt at a  blog! :D . For in-detail reference to codes and other results , visit repo_link above. All Credits go to Professor Chockalingam of IISc Bangalore, who gave me support, ideas and the platform to enable me to contribute to this project. 
+I welcome everyone  to my webpage detailing my research-project in IISc. This project was a very challenging one but I had compressed my workflow to include important details and milestones. For in-detail reference to codes and other results, visit my repo_link above. I am also really thankful to Professor Chockalingam who gave me the support and platform to do this wonderful research-project.  
 
-### All Prepare for the JOY-RIDE-BELOW -HERE WE GO! 
+### Below is the Workflow! 
 
 A. Feb 11 : An Email from Prof Chockalingam citing the need for using smartphone's flashlight as a transmitter of Information. [He shared a paper to start with](https://github.com/vikramsvdd/Smartphone-Flashlight-Modulation-IISc-Project-/blob/main/VLC_References/vlc_smartpone.pdf) A study  done by a chinese university . From then, i started to research and work on the same. 
  
@@ -156,7 +156,7 @@ Now  with my method in hand  I should  achieve 2 khz or 2000 bps data rate! I wi
 
 ![here](/images/oovm(problem_image).jpg)
 
-Wonder why everything is same (in volts) ? Its because higher intensities flashes  take time than lower intensity flashes thus they pose as lower intensity flash and move on ! This is an handicap innate to my smartphone flashlight system! Now, dejected I tried my next best thing! Delay for 1’s symbol using a for loop of 100 times, which introduces a mean delay of 750 us to 1’s high time. This clicks  , not the photo but the output 😀 
+Wonder why everything is same (in volts) ? Its because higher intensities flashes  take time than lower intensity flashes thus they pose as lower intensity flash and move on ! This is an handicap innate to my smartphone flashlight system! Now, dejected I tried my next best thing! Delay for 1’s symbol using a for loop of 100 times, which introduces a mean delay of 750 us to 1’s high time. This clicks , not the photo but the output 😀 
 
 ![here](/images/vpwm(750us_delay_for_1(using%20forloop)_without_voltage_divider_op).jpg) 
 
