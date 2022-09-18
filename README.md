@@ -174,6 +174,8 @@ U. Got Feedback from several forum friends who advocated the use of NEC protocol
 
 
 
+V. {ONGOING} : Non-linearity in VLC transceiver circuits
+
 **NOTATIONS**:
 [1]:ST( A test in which i flash 500 strings of the same word "chockalingam" , it is useful for deterimining BER and other metrics! for all the types of modulations, this is the standard test that i had carried out.)  
 
